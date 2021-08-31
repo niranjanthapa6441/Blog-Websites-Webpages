@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <title>Image Slider using HTML and CSS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="homeStyle.css">
+</head>
+
+<body onload="slider()">
+    <section class="banner">
+        <div class="slider">
+            <img src="images/img1.jpg" id="slideImg">
+        </div>
+        <div class="overlay">
+            <div class="navbar">
+                <nav>
+                    <ul>
+                        <li> <a href="realhome.html">Home</a></li>
+                        <li> <a href="blogs.html">BLogs</a></li>
+                        <li> <a href="Contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="content">
+                <h1>WELCOME TO THE WORLD OF TECHNOLOGY</h1>
+                <h3>To get the latest updates on technlogoies press the button below
+                </h3>
+                <div class="div">
+                    <a href="blogs.html"><button type="button">EXPLORE&#8594;</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        var slideImg = document.getElementById("slideImg");
+        var images = new Array(
+            "images/img1.jpg",
+            "images/img2.jpg",
+            "images/img3.jpg",
+            "images/img4.jpg"
+        )
+        var len = images.length;
+        var i = 0;
+        function slider() {
+            if (i > len - 1) {
+                i = 0;
+            }
+            slideImg.src = images[i];
+            i++;
+            setTimeout('slider()', 5000)
+        }
+    </script>
+</body>
+
+</html>
